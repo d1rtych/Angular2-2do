@@ -13,11 +13,25 @@ export class TodoItemComponent {
     @Output() 'delete' = new EventEmitter();
     @Output() toggle = new EventEmitter();
 
+    /**
+     * Method triggers event of
+     * changing item's state
+     *
+     * @method onToggle
+     * @returns {void}
+     */
     onToggle() {
         this.item.completed = !this.item.completed;
         this.toggle.emit(this.item);
     }
 
+    /**
+     * Method triggers event of
+     * deleting item
+     *
+     * @method onDelete
+     * @returns {void}
+     */
     onDelete() {
         this.delete.emit(this.item);
     }

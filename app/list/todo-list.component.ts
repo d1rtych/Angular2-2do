@@ -16,14 +16,32 @@ export class TodoListComponent implements OnInit {
         this.items = [];
     }
 
+    /**
+     * Method gets items on page initialization
+     *
+     * @method ngOnInit
+     * @returns {void}
+     */
     ngOnInit() {
         this.todoService.getItems().then(items => this.items = items);
     }
 
+    /**
+     * Method deletes current item
+     *
+     * @param item {Object}
+     * @returns {void}
+     */
     deleteItem(item: Todo) {
         this.todoService.deleteItem(item);
     }
 
+    /**
+     * Method updates state of current item
+     *
+     * @param item {Object}
+     * @returns {void}
+     */
     toggleState(item: Todo) {
         this.todoService.toggleState(item);
     }

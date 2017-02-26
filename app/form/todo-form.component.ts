@@ -12,6 +12,12 @@ export class TodoFormComponent {
 
     constructor(private todoService: TodoService) {}
 
+    /**
+     * Method creates new item
+     *
+     * @method onSubmit
+     * @returns {void}
+     */
     onSubmit() {
         this.todoService.createItem(this.title);
     }

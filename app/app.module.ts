@@ -29,6 +29,4 @@ import { TodoService } from './Shared/todo.service';
     bootstrap: [AppComponent]
 })
 
-export class AppModule {
-
-}
+export class AppModule {}

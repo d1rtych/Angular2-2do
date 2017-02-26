@@ -1,6 +1,14 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 export class InMemoryDataService implements InMemoryDbService {
+
+    /**
+     * Method returns mock
+     * array with data
+     *
+     * @method createDb
+     * @returns {{items: ({id: number, title: string, completed: boolean}|{id: number, title: string, completed: boolean}|{id: number, title: string, completed: boolean})[]}}
+     */
     createDb() {
         const items = [
             {
