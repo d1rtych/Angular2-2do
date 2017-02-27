@@ -84,7 +84,7 @@ export class TodoService {
         let options = new RequestOptions({ headers });
         let url = `${this.apiUrl}/${item.id}`;
 
-        this.http.patch(url, item, options)
+        this.http.put(url, item, options)
             .toPromise()
             .then(res => item.completed = !item.completed)
             .catch(this.handleError);

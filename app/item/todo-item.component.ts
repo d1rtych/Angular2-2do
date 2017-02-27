@@ -21,7 +21,6 @@ export class TodoItemComponent {
      * @returns {void}
      */
     onToggle() {
-        this.item.completed = !this.item.completed;
         this.toggle.emit(this.item);
     }
 
