@@ -7,9 +7,10 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './Shared/data.service';
 
 import { AppComponent } from './app.component';
-import { TodoFormComponent } from './form/todo-form.component';
-import { TodoListComponent } from './list/todo-list.component';
-import { TodoItemComponent } from './item/todo-item.component';
+import { ItemsComponent } from './items/items.component';
+import { TodoFormComponent } from './items/form/todo-form.component';
+import { TodoListComponent } from './items/list/todo-list.component';
+import { TodoItemComponent } from './items/item/todo-item.component';
 import { TodoService } from './Shared/todo.service';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { TodoService } from './Shared/todo.service';
     ],
     declarations: [
         AppComponent,
+        ItemsComponent,
         TodoFormComponent,
         TodoListComponent,
         TodoItemComponent
