@@ -1,4 +1,5 @@
 <todo-form (create)="createItem($event)"></todo-form>
 <todo-list [items]="items"
            (delete)="deleteItem($event)"
-           (toggle)="toggleState($event)"></todo-list>
+           (toggle)="toggleState($event)"
+           (edit)="editItem($event)"></todo-list>

@@ -33,6 +33,10 @@ export class ItemsComponent implements OnInit {
         });
     }
 
+    editItem(item: Todo) {
+
+    }
+
     toggleState(item: Todo) {
         this.todoService.toggleState(item).subscribe(res => item.completed = !item.completed);
     }

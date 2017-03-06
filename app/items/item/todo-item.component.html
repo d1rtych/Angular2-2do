@@ -1,13 +1,26 @@
 <div class="todo-item" [class.completed]="item.completed">
-    <button class="checkbox icon" (click)="onToggle()">
+    <button class="checkbox icon" (click)="onToggle()" [disabled]="editMode">
         <i class="material-icons">{{ item.completed ? 'check_box' : 'check_box_outline_blank' }}</i>
     </button>
 
-    <span class="title">{{ item.title }}</span>
+    <span *ngIf="!editMode" class="title">{{ item.title }}</span>
+    <input *ngIf="editMode" type="text" [value]="item.title" #itemInput>
 
     <div class="actions">
-        <button class="delete icon" (click)="onDelete()">
+        <button class="edit icon" (click)="onEdit()" *ngIf="!editMode">
+            <i class="material-icons">mode_edit</i>
+        </button>
+
+        <button class="delete icon" (click)="onDelete()" *ngIf="!editMode">
             <i class="material-icons">delete</i>
+        </button>
+
+        <button class="accept icon" (click)="onAccept(itemInput)" *ngIf="editMode">
+            <i class="material-icons">done</i>
+        </button>
+
+        <button class="cancel icon" (click)="onCancel()" *ngIf="editMode">
+            <i class="material-icons">clear</i>
         </button>
     </div>
 </div>

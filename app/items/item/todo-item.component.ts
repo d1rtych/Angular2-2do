@@ -9,9 +9,12 @@ import { Todo } from '../../Shared/todo';
     styleUrls: ['todo-item.component.css']
 })
 export class TodoItemComponent {
+    editMode = false;
+
     @Input() item: Todo;
     @Output() 'delete' = new EventEmitter();
     @Output() toggle = new EventEmitter();
+    @Output() edit = new EventEmitter();
 
     onToggle() {
         this.toggle.emit(this.item);
@@ -19,5 +22,19 @@ export class TodoItemComponent {
 
     onDelete() {
         this.delete.emit(this.item);
+    }
+
+    onEdit() {
+        this.editMode = true;
+    }
+
+    onAccept (value: string) {
+        this.editMode = false;
+        this.edit.emit(this.item);
+        console.log(value);
+    }
+
+    onCancel() {
+        this.editMode = false;
     }
 }
